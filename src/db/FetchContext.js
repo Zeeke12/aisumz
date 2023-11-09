@@ -1,5 +1,6 @@
 import { createContext } from 'react'
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 export const FetchContext = createContext();
@@ -8,6 +9,20 @@ export const FetchContextProvider = (props) => {
   const [apiData, setApiData] = useState(null);
   const [inputLink, setInputLink] = useState('');
   const [loading, setloading] = useState(false)
+
+
+  useEffect(() => {
+    const storedResult = localStorage.getItem('summary');
+    if (storedResult !== null) {
+      setApiData(JSON.parse(storedResult));
+      console.log(localStorage)
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('summary', JSON.stringify(apiData));
+  }, [apiData]);
+
 
   const fetchData = async () => {
     setloading(true)
@@ -24,6 +39,7 @@ export const FetchContextProvider = (props) => {
       const response = await fetch(url, options);
       const result = await response.json();
       setApiData(result.summary);
+      localStorage.setItem('summary', JSON.stringify(apiData));
       setloading(false)
       console.log(result.summary);
     } catch (error) {

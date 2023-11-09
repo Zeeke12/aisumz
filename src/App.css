@@ -1,0 +1,11 @@
+body{
+    height: 100vh;
+    background-color: #d8a8d8;
+    opacity: 0.8;
+    background-image:  linear-gradient(135deg, #f745f5 25%, transparent 25%), linear-gradient(225deg, #f745f5 25%, transparent 25%), linear-gradient(45deg, #f745f5 25%, transparent 25%), linear-gradient(315deg, #f745f5 25%, #d8a8d8 25%);
+    background-position:  6px 0, 6px 0, 0 0, 0 0;
+    background-size: 6px 6px;
+    background-repeat: repeat;
+    padding: 0;
+    margin: 0;
+}

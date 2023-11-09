@@ -2,10 +2,11 @@ import './App.css';
 import Topbar from './components/Topbar';
 import Sumz from './pages/Sumz';
 import { FetchContextProvider } from './db/FetchContext';
+import './App.css';
 
 function App() {
   return (
-    <div className='w-screen pb-auto px-2 h-max bg-gradient-to-b from-rose-500 to-indigo-700'>
+    <div className='w-screen px-2 h-max max-h-max '>
       <FetchContextProvider>
       <Topbar />
       <Sumz />

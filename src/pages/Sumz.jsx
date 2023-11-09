@@ -5,7 +5,7 @@ import { FetchContext } from '../db/FetchContext'
 const Sumz = () => {
   const { fetchDataButton, fetchData, inputLink, handleInput, apiData, loading } = useContext(FetchContext)
   return (
-    <div className='flex flex-col py-5 px-auto h-fit' >
+    <div className='flex flex-col py-5 px-auto h-fit mb-5' >
         <div className='flex flex-col text-center'> 
         <h1 className='text-5xl'>FREE SUMMARY GENERATOR</h1>
         <h1 className='text-5xl text-violet-950	'>OPEN AI GPT-4</h1>
@@ -34,12 +34,9 @@ const Sumz = () => {
       )}
       {!loading && apiData && (
         <div className='py-5 px-5 h-max bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 rounded-md w-[300px] md:w-[600px] mx-auto'>
-          {apiData}
+          {apiData} 
         </div>
       )}
-        {apiData === null ? <div className='h-[300px] md:h-[500px]'>
-</div> : <span></span>
-        }
         
         </div>
     </div>

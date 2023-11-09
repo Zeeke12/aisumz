@@ -5,7 +5,7 @@ import { FetchContextProvider } from './db/FetchContext';
 
 function App() {
   return (
-    <div className=' h-screen w-full bg-gradient-to-b from-rose-500 to-indigo-700'>
+    <div className='w-screen pb-auto px-2 h-max bg-gradient-to-b from-rose-500 to-indigo-700'>
       <FetchContextProvider>
       <Topbar />
       <Sumz />

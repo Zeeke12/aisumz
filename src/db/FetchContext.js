@@ -7,8 +7,10 @@ export const FetchContext = createContext();
 export const FetchContextProvider = (props) => {
   const [apiData, setApiData] = useState(null);
   const [inputLink, setInputLink] = useState('');
+  const [loading, setloading] = useState(false)
 
   const fetchData = async () => {
+    setloading(true)
     const url = `https://article-extractor-and-summarizer.p.rapidapi.com/summarize?url=${inputLink}&length=3`;
     const options = {
       method: 'GET',
@@ -22,6 +24,7 @@ export const FetchContextProvider = (props) => {
       const response = await fetch(url, options);
       const result = await response.json();
       setApiData(result.summary);
+      setloading(false)
       console.log(result.summary);
     } catch (error) {
       console.error(error);
@@ -37,7 +40,7 @@ export const FetchContextProvider = (props) => {
     setInputLink(value);
   };
 
-  const contextValue = { apiData, fetchDataButton, inputLink, handleInput };
+  const contextValue = { apiData, loading, fetchDataButton, fetchData, inputLink, handleInput };
 
   return (
     <FetchContext.Provider value={contextValue}>

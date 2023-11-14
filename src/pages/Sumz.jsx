@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { FetchContext } from '../db/FetchContext'
 
 const Sumz = () => {
-  const { fetchDataButton, fetchData, inputLink, handleInput, apiData, loading } = useContext(FetchContext)
+  const { fetchData, inputLink, handleInput, apiData, loading } = useContext(FetchContext)
   return (
     <div className='flex flex-col py-5 px-auto h-fit mb-5' >
         <div className='flex flex-col text-center'> 
@@ -26,14 +26,14 @@ const Sumz = () => {
 
         {loading && (
         <div><button type="button">
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-violet-800 text-3xl" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
     </button></div>
       )}
       {!loading && apiData && (
-        <div className='py-5 px-5 h-max bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 rounded-md w-[300px] md:w-[600px] mx-auto'>
+        <div className='py-5 px-5 h-max bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 rounded-md w-[350px] md:w-[600px] mx-auto text-left'>
           {apiData} 
         </div>
       )}
